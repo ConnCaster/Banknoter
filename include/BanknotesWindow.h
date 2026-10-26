@@ -15,6 +15,9 @@ public:
     explicit BanknotesWindow(QWidget* parent = nullptr);
     ~BanknotesWindow() override;
 
+signals:
+    void BackRequested();
+
 private:
     std::unique_ptr<Ui::BanknotesWindow> ui_;
 

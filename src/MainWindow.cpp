@@ -8,6 +8,13 @@ MainWindow::MainWindow(QWidget *parent)
   connect(ui_->openBanknotesButton, &QPushButton::clicked, this, [this] {
     if (!banknotesWindow_) {
       banknotesWindow_ = std::make_unique<BanknotesWindow>();
+
+      connect(banknotesWindow_.get(), &BanknotesWindow::BackRequested, this, [this]() {
+        banknotesWindow_->hide();
+        this->show();
+        this->raise();
+        this->activateWindow();
+      });
     }
 
     banknotesWindow_->show();

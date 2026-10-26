@@ -22,6 +22,8 @@ add_executable(Banknoter
 
         ui/MainWindow.ui
         ui/BanknotesWindow.ui
+
+        resources/resources.qrc
 )
 
 target_include_directories(Banknoter PRIVATE
